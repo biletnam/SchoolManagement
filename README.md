@@ -10,8 +10,8 @@ Build and Run
 -------------
  
 Run in the command line:
-	```
+
 	mvn package
 	
 	mvn spring-boot:run
-	```
+	
