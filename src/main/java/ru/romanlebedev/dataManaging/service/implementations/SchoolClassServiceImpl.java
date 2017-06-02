@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.romanlebedev.dataManaging.entity.School;
 import ru.romanlebedev.dataManaging.entity.SchoolClass;
-import ru.romanlebedev.dataManaging.repository.MarkRepository;
 import ru.romanlebedev.dataManaging.repository.SchoolClassRepository;
 import ru.romanlebedev.dataManaging.service.interfaces.SchoolClassService;
 

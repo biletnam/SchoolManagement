@@ -89,9 +89,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                '}';
+        return firstname + " " + lastname;
     }
 }

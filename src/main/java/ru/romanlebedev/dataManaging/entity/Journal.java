@@ -85,8 +85,6 @@ public class Journal {
 
     @Override
     public String toString() {
-        return "Journal{" +
-                "journalName='" + journalName + '\'' +
-                '}';
+        return journalName;
     }
 }

@@ -105,9 +105,6 @@ public class Teacher {
 
     @Override
     public String toString() {
-        return "Teacher{" +
-                "firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                '}';
+        return firstname + " " + lastname;
     }
 }

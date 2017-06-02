@@ -12,7 +12,6 @@ import java.util.List;
 public interface TeacherService {
     Teacher addTeacher(Teacher teacher);
     void deleteTeacher(Long id);
-    Teacher getBySchoolClass(SchoolClass schoolClass);
     Teacher getBySubject(Subject subject);
     Teacher editTeacher(Teacher teacher);
     List<Teacher> getAllTeachers();

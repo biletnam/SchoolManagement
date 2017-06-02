@@ -36,6 +36,16 @@ public class MarkServiceImpl implements MarkService {
     }
 
     @Override
+    public List<Mark> getByStudentAndSubject(Student student, Subject subject) {
+        return markRepository.findMarksByStudentAndSubject(student , subject);
+    }
+
+    @Override
+    public List<Mark> getByStudent(Student student) {
+        return markRepository.findMarksByStudent(student);
+    }
+
+    @Override
     public Mark editMark(Mark mark) {
         return markRepository.save(mark);
     }
@@ -43,5 +53,15 @@ public class MarkServiceImpl implements MarkService {
     @Override
     public List<Mark> getAllMarks() {
         return markRepository.findAll();
+    }
+
+    @Override
+    public Double getAverageMarkByStudent(String studentId) {
+        return markRepository.findAverageMarkByStudent(studentId);
+    }
+
+    @Override
+    public Double getAverageMarkByStudentAndSubject(String studentId, String subjectId) {
+        return markRepository.findAverageMarkByStudentAndSubject(studentId , subjectId);
     }
 }

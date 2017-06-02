@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.romanlebedev.JavaFXcontrollers.ClassInformationTabController">
+   <children>
+      <HBox prefHeight="300.0" prefWidth="200.0">
+         <children>
+            <VBox>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <children>
+                  <Label text="Выберите класс" />
+                  <ListView fx:id="classList" onMouseClicked="#classListMouseClicked" prefWidth="150.0" />
+               </children>
+            </VBox>
+            <VBox>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <children>
+                  <VBox prefWidth="200.0">
+                     <children>
+                        <Label text="Классный руководитель : " />
+                        <Label fx:id="teacherLabel" textFill="#da2ec9" />
+                     </children>
+                  </VBox>
+                  <HBox prefWidth="200.0">
+                     <children>
+                        <Label text="Кол-во учеников : " />
+                        <Label fx:id="studentCountLabel" textFill="RED" />
+                     </children></HBox>
+                  <Label text="Выберите ученика" />
+                  <ListView fx:id="studentList" onMouseClicked="#studentListMouseClicked" prefHeight="250.0" prefWidth="150.0" />
+               </children>
+            </VBox>
+            <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <children>
+                  <Label text="Информация об ученике:">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="20.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Имя : " />
+                        <Label fx:id="nameLabel" textFill="#3c00ff" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="20.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Фамилия : " />
+                        <Label fx:id="lastnameLabel" textFill="#3c00ff" />
+                     </children>
+                  </HBox>
+                  <HBox prefWidth="200.0">
+                     <children>
+                        <Label text="Средняя Общая успеваемость : " />
+                        <Label fx:id="averageMark" textFill="RED" />
+                     </children>
+                  </HBox>
+                  <HBox prefWidth="200.0">
+                     <children>
+                        <VBox fx:id="VBoxOfSubjects" prefHeight="200.0" prefWidth="100.0" />
+                        <VBox fx:id="VBoxOfMarkOfSubject" prefHeight="200.0" prefWidth="100.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

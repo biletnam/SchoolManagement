@@ -113,8 +113,6 @@ public class SchoolClass {
 
     @Override
     public String toString() {
-        return "SchoolClass{" +
-                "className='" + className + '\'' +
-                '}';
+        return className;
     }
 }

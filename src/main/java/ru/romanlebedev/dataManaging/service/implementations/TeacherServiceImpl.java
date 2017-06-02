@@ -31,11 +31,6 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    public Teacher getBySchoolClass(SchoolClass schoolClass) {
-        return teacherRepository.findByTeacherClass(schoolClass);
-    }
-
-    @Override
     public Teacher getBySubject(Subject subject) {
         return teacherRepository.findBySubject(subject);
     }

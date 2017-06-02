@@ -114,4 +114,12 @@ public class Mark {
         result = 31 * result + (date != null ? date.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Mark{" +
+                "value=" + value +
+                ", date=" + date +
+                '}';
+    }
 }

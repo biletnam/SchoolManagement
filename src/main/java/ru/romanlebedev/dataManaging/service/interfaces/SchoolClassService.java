@@ -1,6 +1,7 @@
 package ru.romanlebedev.dataManaging.service.interfaces;
 
-import ru.romanlebedev.dataManaging.entity.*;
+import ru.romanlebedev.dataManaging.entity.School;
+import ru.romanlebedev.dataManaging.entity.SchoolClass;
 
 import java.util.List;
 
