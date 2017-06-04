@@ -80,20 +80,6 @@ public class Teacher {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Teacher teacher = (Teacher) o;
-
-        if (id != null ? !id.equals(teacher.id) : teacher.id != null) return false;
-        if (firstname != null ? !firstname.equals(teacher.firstname) : teacher.firstname != null) return false;
-        if (lastname != null ? !lastname.equals(teacher.lastname) : teacher.lastname != null) return false;
-        if (subject != null ? !subject.equals(teacher.subject) : teacher.subject != null) return false;
-        return teacherClass != null ? teacherClass.equals(teacher.teacherClass) : teacher.teacherClass == null;
-    }
-
-    @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (firstname != null ? firstname.hashCode() : 0);

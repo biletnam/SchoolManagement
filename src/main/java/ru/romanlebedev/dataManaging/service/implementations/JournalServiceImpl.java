@@ -29,11 +29,6 @@ public class JournalServiceImpl implements JournalService{
     }
 
     @Override
-    public List<Journal> getBySchoolClass(SchoolClass schoolClass) {
-        return journalRepository.findJournalsByClassOwner(schoolClass);
-    }
-
-    @Override
     public Journal editJournal(Journal journal) {
         return journalRepository.save(journal);
     }

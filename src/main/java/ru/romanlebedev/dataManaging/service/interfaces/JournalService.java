@@ -11,7 +11,6 @@ import java.util.List;
 public interface JournalService {
     Journal addJournal(Journal journal);
     void deleteJournal(Long id);
-    List<Journal> getBySchoolClass(SchoolClass schoolClass);
     Journal editJournal(Journal journal);
     List<Journal> getAllJournals();
 }

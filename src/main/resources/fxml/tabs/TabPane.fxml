@@ -18,6 +18,11 @@
                         <fx:include source="ClassInformationTab.fxml" />
                     </content>
                 </Tab>
+                <Tab text="Журнал оценок">
+                    <content>
+                        <fx:include source="JournalTab.fxml" />
+                    </content>
+                </Tab>
                 <fx:include fx:id="consoleTab" source="ConsoleTab.fxml" />
                 <fx:include fx:id="LoggerTab" source="LoggerTab.fxml" />
             </tabs>
