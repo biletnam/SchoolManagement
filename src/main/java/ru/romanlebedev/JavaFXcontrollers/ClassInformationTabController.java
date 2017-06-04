@@ -71,24 +71,27 @@ public class ClassInformationTabController {
 
     @FXML
     private void classListMouseClicked(MouseEvent event) {
-        clearView();
-        final SchoolClass selectedClass = classList.getSelectionModel().getSelectedItem();
-        teacherLabel.setText(selectedClass.getClassTeacher().getFirstname() + " " + selectedClass.getClassTeacher().getLastname());
-        List<Student> studentsOfSelectedClass = studentService.getBySchoolClass(selectedClass);
-        studentCountLabel.setText(Integer.toString(studentsOfSelectedClass.size()));
-        ObservableList<Student> studentsOfClass = FXCollections.observableArrayList(studentsOfSelectedClass);
-        studentList.setItems(null);
-        studentList.setItems(studentsOfClass);
+        if(classList.getSelectionModel().getSelectedItem() != null) {
+            clearView();
+            final SchoolClass selectedClass = classList.getSelectionModel().getSelectedItem();
+            teacherLabel.setText(selectedClass.getClassTeacher().getFirstname() + " " + selectedClass.getClassTeacher().getLastname());
+            List<Student> studentsOfSelectedClass = studentService.getBySchoolClass(selectedClass);
+            studentCountLabel.setText(Integer.toString(studentsOfSelectedClass.size()));
+            ObservableList<Student> studentsOfClass = FXCollections.observableArrayList(studentsOfSelectedClass);
+            studentList.setItems(null);
+            studentList.setItems(studentsOfClass);
+        }
     }
 
     @FXML
     private void studentListMouseClicked(MouseEvent event) {
-        clearView();
-        averageMark.setText("");
-        final Student selectedStudent = studentList.getSelectionModel().getSelectedItem();
-        setupListOfStudents(selectedStudent);
-        setupAverageMark(selectedStudent);
-        setupAverageMarksBySubject(selectedStudent);
+        if(studentList.getSelectionModel().getSelectedItem() != null) {
+            clearView();
+            final Student selectedStudent = studentList.getSelectionModel().getSelectedItem();
+            setupListOfStudents(selectedStudent);
+            setupAverageMark(selectedStudent);
+            setupAverageMarksBySubject(selectedStudent);
+        }
     }
 
     private void setupListOfStudents(Student selectedStudent){

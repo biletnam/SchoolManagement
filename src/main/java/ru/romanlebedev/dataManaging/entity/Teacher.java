@@ -26,6 +26,11 @@ public class Teacher {
     public Teacher() {
     }
 
+    public Teacher(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
     public Teacher(String firstname, String lastname, Subject subject) {
         this.firstname = firstname;
         this.lastname = lastname;

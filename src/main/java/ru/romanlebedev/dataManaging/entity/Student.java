@@ -27,6 +27,11 @@ public class Student {
     public Student() {
     }
 
+    public Student(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
     public Student(String firstname, String lastname, SchoolClass studentClass) {
         this.firstname = firstname;
         this.lastname = lastname;

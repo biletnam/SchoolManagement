@@ -1,5 +1,8 @@
 package ru.romanlebedev.dataManaging.entity;
 
+import org.hibernate.annotations.LazyCollection;
+import org.springframework.context.annotation.Lazy;
+
 import javax.persistence.*;
 import java.util.List;
 

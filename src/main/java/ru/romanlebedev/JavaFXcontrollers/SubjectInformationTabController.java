@@ -43,12 +43,14 @@ public class SubjectInformationTabController {
     }
 
     public void subjectListMouseClicked(MouseEvent mouseEvent) {
-        final Subject selectedSubject = subjectList.getSelectionModel().getSelectedItem();
-        subjectNameLabel.setText(selectedSubject.getSubjectName());
-        teacherLabel.setText(selectedSubject.getTeacher().getFirstname() + " " + selectedSubject.getTeacher().getLastname() );
-        Double averageMarkValue = markService.getAverageMarkBySubject(selectedSubject.getId().toString());
-        if(averageMarkValue!=null){
-            averageMark.setText(Double.toString((Math.round(averageMarkValue * 100D)/100D)));
+        if(subjectList.getSelectionModel().getSelectedItem() != null) {
+            final Subject selectedSubject = subjectList.getSelectionModel().getSelectedItem();
+            subjectNameLabel.setText(selectedSubject.getSubjectName());
+            teacherLabel.setText(selectedSubject.getTeacher().getFirstname() + " " + selectedSubject.getTeacher().getLastname());
+            Double averageMarkValue = markService.getAverageMarkBySubject(selectedSubject.getId().toString());
+            if (averageMarkValue != null) {
+                averageMark.setText(Double.toString((Math.round(averageMarkValue * 100D) / 100D)));
+            }
         }
     }
 }

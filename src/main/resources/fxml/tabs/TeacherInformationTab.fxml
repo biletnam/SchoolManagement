@@ -40,7 +40,7 @@
                         </HBox>
                         <HBox prefHeight="20.0" prefWidth="200.0">
                             <children>
-                                <Label text="Классное руководство :" />
+                                <Label text="Классное руководство : " />
                                 <Label fx:id="classLabel" textFill="#e300eb" />
                             </children>
                      <VBox.margin>

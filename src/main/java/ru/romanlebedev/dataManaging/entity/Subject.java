@@ -25,6 +25,10 @@ public class Subject {
     public Subject() {
     }
 
+    public Subject(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
     public Subject(String subjectName, Teacher teacher) {
         this.subjectName = subjectName;
         this.teacher = teacher;

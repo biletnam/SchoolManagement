@@ -8,6 +8,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -80,20 +81,24 @@ public class JournalTabController {
     }
 
     public void classListMouseClicked(MouseEvent mouseEvent) {
-        final SchoolClass selectedClass = classList.getSelectionModel().getSelectedItem();
-        List<Student> studentsOfSelectedClass = studentService.getBySchoolClass(selectedClass);
-        ObservableList<Student> studentsOfClass = FXCollections.observableArrayList(studentsOfSelectedClass);
-        subjectList.setItems(null);
-        studentList.setItems(null);
-        studentList.setItems(studentsOfClass);
+        if(classList.getSelectionModel().getSelectedItem() != null) {
+            final SchoolClass selectedClass = classList.getSelectionModel().getSelectedItem();
+            List<Student> studentsOfSelectedClass = studentService.getBySchoolClass(selectedClass);
+            ObservableList<Student> studentsOfClass = FXCollections.observableArrayList(studentsOfSelectedClass);
+            subjectList.setItems(null);
+            studentList.setItems(null);
+            studentList.setItems(studentsOfClass);
+        }
     }
 
     public void studentListMouseClicked(MouseEvent mouseEvent) {
-        final Student selectedStudent = studentList.getSelectionModel().getSelectedItem();
-        List<Subject> subjects = subjectService.getAllSubjects();
-        ObservableList<Subject> observableSubjectList = FXCollections.observableArrayList(subjects);
-        subjectList.setItems(null);
-        subjectList.setItems(observableSubjectList);
+        if(studentList.getSelectionModel().getSelectedItem() != null) {
+            final Student selectedStudent = studentList.getSelectionModel().getSelectedItem();
+            List<Subject> subjects = subjectService.getAllSubjects();
+            ObservableList<Subject> observableSubjectList = FXCollections.observableArrayList(subjects);
+            subjectList.setItems(null);
+            subjectList.setItems(observableSubjectList);
+        }
     }
 
     public void subjectListMouseClicked(MouseEvent mouseEvent) {
@@ -105,6 +110,7 @@ public class JournalTabController {
             final Stage dialog = new Stage();
             dialog.initModality(Modality.APPLICATION_MODAL);
             dialog.setTitle("Поставьте новую оценку");
+            dialog.getIcons().add(new Image("icon.png"));
             VBox dialogVbox = new VBox(20);
             dialogVbox.setPadding(new Insets(10,10,10,10));
             dialogVbox.getChildren().add(new Label("Выберите оценку"));
@@ -137,6 +143,7 @@ public class JournalTabController {
             final Stage dialog = new Stage();
             dialog.initModality(Modality.APPLICATION_MODAL);
             dialog.setTitle("Измените оценку");
+            dialog.getIcons().add(new Image("icon.png"));
             VBox dialogVbox = new VBox(20);
             dialogVbox.setPadding(new Insets(10,10,10,10));
             dialogVbox.getChildren().add(new Label("Выберите оценку"));

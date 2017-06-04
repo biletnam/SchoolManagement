@@ -35,11 +35,12 @@ public class TeacherInformationTabController {
     }
 
     public void teacherListMouseClicked(MouseEvent mouseEvent) {
-        final Teacher selectedTeacher = teacherList.getSelectionModel().getSelectedItem();
-        subjectNameLabel.setText(selectedTeacher.getSubject().getSubjectName());
-        if(selectedTeacher.getTeacherClass() == null){
-            classLabel.setText("нет класса под руководством");
-        }else classLabel.setText(selectedTeacher.getTeacherClass().getClassName());
-
+        if(teacherList.getSelectionModel().getSelectedItem() != null) {
+            final Teacher selectedTeacher = teacherList.getSelectionModel().getSelectedItem();
+            subjectNameLabel.setText(selectedTeacher.getSubject().getSubjectName());
+            if (selectedTeacher.getTeacherClass() == null) {
+                classLabel.setText("нет класса под руководством");
+            } else classLabel.setText(selectedTeacher.getTeacherClass().getClassName());
+        }
     }
 }
