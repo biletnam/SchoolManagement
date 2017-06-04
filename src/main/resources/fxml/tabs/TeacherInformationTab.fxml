@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.romanlebedev.JavaFXcontrollers.TeacherInformationTabController">
+    <children>
+        <HBox prefHeight="300.0" prefWidth="200.0">
+            <children>
+                <VBox>
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </HBox.margin>
+                    <children>
+                        <Label text="Выберите преподавателя" />
+                        <ListView fx:id="teacherList" onMouseClicked="#teacherListMouseClicked" prefWidth="150.0" />
+                    </children>
+                </VBox>
+                <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="300.0">
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </HBox.margin>
+                    <children>
+                        <Label text="Информация о преподавателе">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="20.0" prefWidth="200.0">
+                            <children>
+                                <Label text="Преподаваемый предмет : " />
+                                <Label fx:id="subjectNameLabel" textFill="#3c00ff" />
+                            </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="20.0" prefWidth="200.0">
+                            <children>
+                                <Label text="Классное руководство :" />
+                                <Label fx:id="classLabel" textFill="#e300eb" />
+                            </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

@@ -118,15 +118,14 @@ public class JournalTabController {
             DatePicker datePicker = new DatePicker();
             dialogVbox.getChildren().add(datePicker);
             HBox buttons = new HBox();
-            Button buttonAccept = new Button("Принять");
             buttons.setSpacing(10);
+            Button buttonAccept = new Button("Принять");
             buttonAccept.setOnMouseClicked(event -> saveMark(comboBox, datePicker, dialog));
             buttons.getChildren().add(buttonAccept);
             Button cancelButton = new Button("Отмена");
             cancelButton.setOnMouseClicked(event -> dialog.close());
             buttons.getChildren().add(cancelButton);
             dialogVbox.getChildren().add(buttons);
-
             Scene dialogScene = new Scene(dialogVbox, 350, 250);
             dialog.setScene(dialogScene);
             dialog.show();
@@ -153,6 +152,7 @@ public class JournalTabController {
             datePicker.setValue(journalTable.getSelectionModel().getSelectedItem().getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
             dialogVbox.getChildren().add(datePicker);
             HBox buttons = new HBox();
+            buttons.setSpacing(10);
             Button buttonAccept = new Button("Принять");
             buttonAccept.setOnMouseClicked(event -> editMark(comboBox, datePicker, dialog));
             buttons.getChildren().add(buttonAccept);
@@ -160,7 +160,6 @@ public class JournalTabController {
             cancelButton.setOnMouseClicked(event -> dialog.close());
             buttons.getChildren().add(cancelButton);
             dialogVbox.getChildren().add(buttons);
-
             Scene dialogScene = new Scene(dialogVbox, 350, 250);
             dialog.setScene(dialogScene);
             dialog.show();
@@ -168,7 +167,7 @@ public class JournalTabController {
     }
 
     public void deleteButtonClicked(MouseEvent mouseEvent) {
-        if(checkForSelection()) {
+        if(checkForSelection() && checkSelectedMarkForEdit()) {
             markService.deleteMark(journalTable.getSelectionModel().getSelectedItem().getId());
             updateJournal();
             Notifications notification = Notifications.create()

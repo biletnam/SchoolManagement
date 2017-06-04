@@ -22,5 +22,6 @@ public interface MarkService {
     Mark editMark(Mark mark);
     List<Mark> getAllMarks();
     Double getAverageMarkByStudent(String studentId);
+    Double getAverageMarkBySubject(String subjectId);
     Double getAverageMarkByStudentAndSubject(String studentId , String subjectId);
 }

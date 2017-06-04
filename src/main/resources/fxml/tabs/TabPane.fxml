@@ -23,8 +23,16 @@
                         <fx:include source="JournalTab.fxml" />
                     </content>
                 </Tab>
-                <fx:include fx:id="consoleTab" source="ConsoleTab.fxml" />
-                <fx:include fx:id="LoggerTab" source="LoggerTab.fxml" />
+                <Tab text="Информация о предметах">
+                    <content>
+                        <fx:include source="SubjectInformationTab.fxml" />
+                    </content>
+                </Tab>
+                <Tab text="Информация о преподавателях">
+                    <content>
+                        <fx:include source="TeacherInformationTab.fxml" />
+                    </content>
+                </Tab>
             </tabs>
         </TabPane>
     </children>

@@ -25,6 +25,10 @@ public interface MarkRepository extends JpaRepository<Mark, Long> {
     Double findAverageMarkByStudent(String studentId);
 
     @Query(value = "SELECT AVG(VALUE) FROM MARK \n" +
+            "WHERE MARK.SUBJECTID = ?1 " , nativeQuery = true)
+    Double findAverageMarkBySubject(String subjectId);
+
+    @Query(value = "SELECT AVG(VALUE) FROM MARK \n" +
             "WHERE MARK.STUDENTID = ?1 AND MARK.SUBJECTID = ?2" , nativeQuery = true)
     Double findAverageMarkByStudentAndSubject(String studentId , String subjectId);
 }

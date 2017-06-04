@@ -61,6 +61,11 @@ public class MarkServiceImpl implements MarkService {
     }
 
     @Override
+    public Double getAverageMarkBySubject(String subjectId) {
+        return markRepository.findAverageMarkBySubject(subjectId);
+    }
+
+    @Override
     public Double getAverageMarkByStudentAndSubject(String studentId, String subjectId) {
         return markRepository.findAverageMarkByStudentAndSubject(studentId , subjectId);
     }
